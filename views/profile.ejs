@@ -6,17 +6,32 @@
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <div class="row justify-content-right mt-5">
+                <a class="col-3 btn btn-primary" href="/feed">Return to Feed</a>
+              </div>  
           </div>
           <div class="mt-5">
-            <h2>Add a post</h2>
+            <h2>Post a Dropin</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
+                <label for="caption" class="form-label">Location</label>
+                <textarea class="form-control" id="location" name="location"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Date</label>
+                <input type="date" id="date" name="date">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Time</label>
+                <input type="time" name="time" id="time">
+              </div>
+              <div class="mb-3">
+                <label for="caption" class="form-label">Remarks</label>
+                <textarea class="form-control" id="remarks" name="remarks"></textarea>
               </div>
               <div class="mb-3">
                 <label for="imgUpload" class="form-label">Image</label>
@@ -36,9 +51,6 @@
           </li>
         <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
       </div>  
     </div>
   </div>
