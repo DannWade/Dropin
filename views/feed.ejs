@@ -2,15 +2,46 @@
 <main class="container">
   <div class="row justify-content-around mt-5">
       <a href="/profile" class="col-2 btn btn-primary">Profile</a>
+      <link rel="stylesheet" href="style.css">
   </div>
 </main>
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <li class="">
             <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+              <div class="postbox">
+                <img class="postpic" src="<%= posts[i].image%>">
+                <div>
+                  <div class="infobox">
+                    <%=posts[i].title%>
+                  </div>
+                  <div class="infobox">
+                    <label for="location">Location: </label>
+                    <%=posts[i].location%>
+                  </div class="infobox">
+                  <div class="infobox">
+                    <label for="date">Date: </label>
+                    <%=posts[i].date%>
+                  </div>
+                  <div class="infobox">
+                    <label for="time">Time: </label>
+                    <%=posts[i].time%>
+                  </div>
+                  <div class="infobox">
+                    <label for="remarks">Remarks: </label>
+                    <%=posts[i].remarks%>
+                  </div>
+                  <div class="infobox">
+                    <label for="players">Players: </label>
+                    <% for(var j=0; j<posts[i].players.length; j++) {%>
+                      <span><%= posts[i].players[j] %></span>
+                      <% } %>
+                  </div>
+                </div>
+                <button class="btn btn-primary fa fa-plus"></button>
+              </div>
             </a>
           </li>
         <% } %>

@@ -27,6 +27,7 @@ module.exports = {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", { posts: posts });
+      console.log(posts)
     } catch (err) {
       console.log(err);
     }
@@ -44,15 +45,19 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-
+      // destructure the date format so it appears day,month,year
+      let a,b,c
+      [a,b,c] = req.body.date.split("-")
+      const event = new Date(a, b, c);
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
         cloudinaryId: result.public_id,
         location: req.body.location,
-        date: req.body.date,
+        date: event.toDateString(),
         time: req.body.time,
         remarks:req.body.remarks,
+        players: [req.user.userName]
       });
       console.log("Post has been added!");
       res.redirect("/profile");

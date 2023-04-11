@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const User = require("../models/User");
 
 const PostSchema = new mongoose.Schema({
   title: {
@@ -18,7 +19,7 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: Date,
+    type: String,
     required: true,
   },
   time: {
@@ -37,6 +38,10 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  players:{
+    type: Array,
+    default:[User.id]
+  }
 });
 
 module.exports = mongoose.model("Post", PostSchema);
