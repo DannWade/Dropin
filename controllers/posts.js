@@ -32,6 +32,13 @@ module.exports = {
       console.log(err);
     }
   },
+  getForm: async(req,res) =>{
+    try {
+      console.log("hello")
+    } catch (err) {
+      console.log(err)
+    }
+  },
   getPost: async (req, res) => {
     try {
       const post = await Post.findById(req.params.id);

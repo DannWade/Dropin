@@ -3,15 +3,18 @@
   <div class="row mt-5">
       <div class="col-6">
           <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-              <div class="row justify-content-right mt-5">
-                <a class="col-3 btn btn-primary" href="/feed">Return to Feed</a>
-              </div>  
+              <p style="color: white;"><strong>User Name</strong>: <%= user.userName %></p>
+              <p style="color: white;"><strong>Email</strong>: <%= user.email %></p>
+              <div>
+                <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              </div>
+              <hr>
+              <div>
+                <a class="col-3 btn btn-primary" href="/feed">Return to Feed</a>  
+              </div>
           </div>
           <div class="mt-5">
-            <h2>Post a Dropin</h2>
+            <h2 style="color: white;">Post a Dropin</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
