@@ -34,7 +34,7 @@ module.exports = {
   },
   getForm: async(req,res) =>{
     try {
-      console.log("hello")
+      res.render("form.ejs")
     } catch (err) {
       console.log(err)
     }
