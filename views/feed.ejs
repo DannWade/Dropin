@@ -46,7 +46,11 @@
                       <% } %>
                   </div>
                 </div>
+                <% if (posts[i].user == user) { %>
+                <button class="btn btn-primary fa fa-trash"></button>
+                <% }else{ %>
                 <button class="btn btn-primary fa fa-plus"></button>
+                  <% } %>
               </div>
             </a>
           </li>

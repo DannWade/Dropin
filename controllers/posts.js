@@ -26,8 +26,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
-      console.log(posts)
+      res.render("feed.ejs", { posts: posts, user: req.user.id});
     } catch (err) {
       console.log(err);
     }
@@ -63,6 +62,7 @@ module.exports = {
         location: req.body.location,
         date: event.toDateString(),
         time: req.body.time,
+        user: req.user.id,
         remarks:req.body.remarks,
         players: [req.user.userName]
       });
