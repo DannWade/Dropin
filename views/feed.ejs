@@ -16,11 +16,11 @@
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="">
-            <a href="/post/<%= posts[i]._id%>">
               <div class="postbox">
                 <img class="postpic" src="<%= posts[i].image%>">
                 <div>
                   <div class="infobox">
+                    <a href="/post/<%= posts[i]._id%>">
                    <h3><%=posts[i].title%></h3>
                   </div>
                   <div class="infobox">
@@ -46,14 +46,24 @@
                       <% } %>
                   </div>
                 </div>
-                <% if (posts[i].user == user) { %>
-                <button class="btn btn-primary fa fa-trash"></button>
-                <% }else{ %>
-                <button class="btn btn-primary fa fa-plus"></button>
-                  <% } %>
+                <div>
+                  <% if (posts[i].user == user) { %>
+                      <form style="height: 100%;"
+                        action="/post/deletePost/<%= posts[i]._id%>?_method=DELETE"
+                        method="POST"
+                        class="col-3"
+                      >
+                        <button style="height: 100%;" class="btn btn-primary fa fa-trash" type="submit"></button>
+                      </form>
+                    <!-- <a href="/deletePost/<%= posts[i]._id%>" ><button style="height: 100%;" class="btn btn-primary fa fa-trash"></button></a> -->
+                  <% }else{ %>
+                  <button class="btn btn-primary fa fa-plus"></button>
+                    <% } %>
+                </div>
               </div>
             </a>
           </li>
+          <hr>
         <% } %>
         </ul>
     </div>
