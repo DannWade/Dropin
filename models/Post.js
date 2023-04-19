@@ -40,7 +40,6 @@ const PostSchema = new mongoose.Schema({
   },
   players:{
     type: Array,
-    default:[User.id]
   }
 });
 

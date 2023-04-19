@@ -15,6 +15,8 @@ router.put("/likePost/:id", postsController.likePost);
 
 router.delete("/deletePost/:id", postsController.deletePost);
 
+router.put("/addPlayer/:id", postsController.addPlayer);
+
 
 
 module.exports = router;

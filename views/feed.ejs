@@ -57,7 +57,14 @@
                       </form>
                     <!-- <a href="/deletePost/<%= posts[i]._id%>" ><button style="height: 100%;" class="btn btn-primary fa fa-trash"></button></a> -->
                   <% }else{ %>
-                  <button class="btn btn-primary fa fa-plus"></button>
+                    <form style="height: 100%;"
+                    action="/post/addPlayer/<%= posts[i]._id%>?_method=PUT"
+                    method="POST"
+                    class="col-3"
+                  >
+                    <button style="height: 100%;" class="btn btn-primary fa fa-plus" type="submit"></button>
+                  </form>
+                  <!-- <button class="btn btn-primary fa fa-plus"></button> -->
                     <% } %>
                 </div>
               </div>

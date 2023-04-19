@@ -100,4 +100,16 @@ module.exports = {
       res.redirect("/profile");
     }
   },
+  addPlayer: async (req,res) => {
+    try {
+      await Post.findOneAndUpdate({ _id: req.params.id },{
+        $push: { players: req.user.userName },
+      })
+      console.log("success")
+      res.redirect("/feed")
+    } catch (err) {
+      console.log(req.params.id)
+      res.redirect("/profile")
+    }
+  },
 };
