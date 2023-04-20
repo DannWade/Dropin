@@ -13,6 +13,9 @@ const CommentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Comment",
   },
+  userName:{
+    type: String,
+  }
 });
 
 module.exports = mongoose.model("Comment", CommentSchema);

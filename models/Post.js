@@ -40,6 +40,12 @@ const PostSchema = new mongoose.Schema({
   },
   players:{
     type: Array,
+  },
+  likes:{
+    type: Number, 
+  },
+  createdBy:{
+    type:String,
   }
 });
 

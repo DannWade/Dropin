@@ -64,7 +64,8 @@ module.exports = {
         time: req.body.time,
         user: req.user.id,
         remarks:req.body.remarks,
-        players: [req.user.userName]
+        players: [req.user.userName],
+        createdBy: req.user.userName,
       });
       console.log("Post has been added!");
       res.redirect("/profile");
