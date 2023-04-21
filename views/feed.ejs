@@ -7,16 +7,17 @@
       <link rel="stylesheet" href="style.css">
 </main>
   <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+    <div class=" justify-content-center mt-5">
+      <ul class=" list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-sm-12">
-              <div class="postbox">
-                <img class="postpic" src="<%= posts[i].image%>">
+          <li class="postbox">
+                <div style="height: 150px">
+                  <img class="postpic" src="<%= posts[i].image%>">
+                </div>
                 <div>
                   <div class="infobox">
                     <a href="/post/<%= posts[i]._id%>">
-                   <h3><%=posts[i].title%></h3>
+                    <h3><%=posts[i].title%></h3>
                   </div>
                   <div class="infobox">
                     <label for="location">Location: </label>
@@ -41,7 +42,7 @@
                       <% } %>
                   </div>
                 </div>
-                <div>
+                
                   <% if (posts[i].user == user) { %>
                       <form style="height: 100%;"
                         action="/post/deletePost/<%= posts[i]._id%>?_method=DELETE"
@@ -61,11 +62,9 @@
                   </form>
                   <!-- <button class="btn btn-primary fa fa-plus"></button> -->
                     <% } %>
-                </div>
+              
               </div>
-            </a>
           </li>
-          <hr>
         <% } %>
         </ul>
     </div>

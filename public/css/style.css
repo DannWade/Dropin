@@ -1,6 +1,7 @@
 .postbox{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     border: solid 15px rgb(11, 32, 220);
     border-radius: 20px;
@@ -12,7 +13,7 @@ li{
 }
 
 .postpic{
-    height: 200px;
+    height: 100%;
 }
 
 a{
@@ -27,3 +28,9 @@ body{
 label, span{
     color: white;
 }
+
+li{
+    display: flex;
+    flex-direction: row;
+}
+
